@@ -2,7 +2,7 @@ package ryan.sumorialcalculator;
 
 public class SumorialCalculator {
 
-    public int calculateValue(int number) {
+    public int calculateValueTheSlowWay(int number) {
         int value = 0;
         for (int i = 1; i <= number; i++) {
             value += i;
@@ -10,10 +10,18 @@ public class SumorialCalculator {
         return value;
     }
 
+    public int calculateValueTheFastWay(int number) {
+        int value = 0;
+        for (int i = 1; i <= number; i++) {
+            value += i;
+        }
+        return (number * (number + 1)) / 2;
+    }
+
     public static void main(String[] arguments) {
         SumorialCalculator sumorial = new SumorialCalculator();
-        int number = 252;
-        int numValue = sumorial.calculateValue(number);
+        int number = 36;
+        int numValue = sumorial.calculateValueTheFastWay(number);
         System.out.println(number + "? = " + numValue);
     }
 
